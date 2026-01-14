@@ -10,15 +10,15 @@ const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/lms";
 const startServer = async () => {
   try {
     // Connect to MongoDB
-    //await mongoose.connect(MONGODB_URI);
-    //console.log("✅ Connected to MongoDB");
+    await mongoose.connect(MONGODB_URI);
+    console.log("Connected to MongoDB");
 
     // Start Express server
     app.listen(PORT, () => {
-      console.log(`🚀 Server running on http://localhost:${PORT}`);
+      console.log(`Server running on http://localhost:${PORT}`);
     });
   } catch (error) {
-    console.error("❌ Failed to start server", error);
+    console.error("Failed to start server", error);
     process.exit(1);
   }
 };
