@@ -1,6 +1,7 @@
 import express, { Request, Response, NextFunction } from "express";
 import cors from "cors";
 import morgan from "morgan";
+import bcrypt from "bcryptjs";
 
 // import authRoutes from "./routes/auth.routes";
 // import courseRoutes from "./routes/course.routes";
@@ -14,6 +15,13 @@ app.use(cors());
 app.use(morgan("dev"));
 app.use(express.json()); // Parse JSON bodies
 
+
+
+
+
+const hash = bcrypt.hash("password123", 10);
+console.log("fffff ",hash);
+
 // Routes
 // app.use("/api/auth", authRoutes);
 // app.use("/api/courses", courseRoutes);
@@ -21,7 +29,7 @@ app.use("/api/users", userRoutes);
 // app.use("/api/admin", adminRoutes);
 
 app.get("/", (req: Request, res: Response) => {
-  res.json({ message: "Welcome to the LMS API" });
+  res.json({ message: "Welcome to the API" });
 });
 
 // 404 Handler
