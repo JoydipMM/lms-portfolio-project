@@ -1,0 +1,9 @@
+
+npm i --save-dev @types/node
+npm i cors
+npm i morgan
+npm i express
+npm i mongoose
+
+
+npm install --save-dev ts-node typescript
