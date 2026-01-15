@@ -32,9 +32,9 @@ const UserSchema = new Schema(
 
 export const User = model("User", UserSchema);
 
-
-/*
 export default User;
+/*
+
 
 export interface User {
   name: string;
