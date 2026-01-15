@@ -1,4 +1,5 @@
 import express, { Request, Response, NextFunction } from "express";
+// import "./types/express";
 import cors from "cors";
 import morgan from "morgan";
 import bcrypt from "bcryptjs";
@@ -14,13 +15,6 @@ const app = express();
 app.use(cors());
 app.use(morgan("dev"));
 app.use(express.json()); // Parse JSON bodies
-
-
-
-
-
-const hash = bcrypt.hash("password123", 10);
-console.log("fffff ",hash);
 
 // Routes
 // app.use("/api/auth", authRoutes);

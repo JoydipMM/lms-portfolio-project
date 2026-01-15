@@ -6,8 +6,9 @@ import jwt from "jsonwebtoken";
  */
 export interface AuthRequest extends Request {
   user?: {
+    id: string;
     userId: string;
-    role: string;
+    role: "STUDENT" | "INSTRUCTOR" | "ADMIN";
     email: string;
   };
 }
@@ -35,6 +36,7 @@ export const authenticate = (
     ) as jwt.JwtPayload;
 
     req.user = {
+      id: decoded.id,
       userId: decoded.userId,
       role: decoded.role,
       email: decoded.email
