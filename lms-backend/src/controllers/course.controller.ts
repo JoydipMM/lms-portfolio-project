@@ -108,7 +108,7 @@ export class CourseController {
    */
   static async publishCourse(req: Request, res: Response) {
     try {
-      const instructorId = req.user.id;
+      const instructorId = (req as any).user.id;
 
       const course = await CourseService.publishCourse(
         req.params.id,
