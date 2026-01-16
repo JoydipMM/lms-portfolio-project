@@ -4,8 +4,8 @@ import cors from "cors";
 import morgan from "morgan";
 import bcrypt from "bcryptjs";
 
-// import authRoutes from "./routes/auth.routes";
-// import courseRoutes from "./routes/course.routes";
+import authRoutes from "./routes/auth.routes";
+import courseRoutes from "./routes/course.routes";
 import userRoutes from "./routes/user.routes";
 // import adminRoutes from "./routes/admin.routes";
 
@@ -17,8 +17,8 @@ app.use(morgan("dev"));
 app.use(express.json()); // Parse JSON bodies
 
 // Routes
-// app.use("/api/auth", authRoutes);
-// app.use("/api/courses", courseRoutes);
+app.use("/api/auth", authRoutes);
+app.use("/api/courses", courseRoutes);
 app.use("/api/users", userRoutes);
 // app.use("/api/admin", adminRoutes);
 
