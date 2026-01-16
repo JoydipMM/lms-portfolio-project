@@ -53,7 +53,7 @@ export class CourseController {
    */
   static async createCourse(req: Request, res: Response) {
     try {
-      const instructorId = req.user.id;
+      const instructorId = (req as any).user.id;
 
       const course = await CourseService.createCourse(
         instructorId,
@@ -80,7 +80,7 @@ export class CourseController {
    */
   static async updateCourse(req: Request, res: Response) {
     try {
-      const instructorId = req.user.id;
+      const instructorId = (req as any).user.id;
 
       const course = await CourseService.updateCourse(
         req.params.id,
